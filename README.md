@@ -83,21 +83,33 @@ spiritualart/
 │   ├── mystical.css          # Custom mystical styling
 │   └── mystical-art-*.png    # AI-generated art images
 ├── config/
-│   └── settings_data.json    # Theme settings with mystical colors
+│   ├── settings_data.json    # Theme settings with mystical colors
+│   └── settings_schema.json  # Theme settings schema
 ├── layout/
-│   └── theme.liquid          # Main theme layout
-├── sections/                 # Shopify sections
+│   ├── theme.liquid          # Main theme layout (includes Google Fonts)
+│   └── password.liquid       # Password page layout
+├── sections/                 # Shopify sections (image-banner, slideshow, etc.)
 ├── templates/
 │   └── index.json           # Homepage with hero & slideshow
-├── generate-images.js        # AI image generation script
-└── package.json             # Dependencies
+├── snippets/                # Reusable Liquid snippets
+├── locales/                 # Translation files
+├── .shopifyignore          # Files excluded from Shopify sync
+├── .gitignore              # Files excluded from Git
+├── generate-images.js      # AI image generation script
+└── package.json            # Dependencies
 ```
+
+### Important Notes
+- **Image References**: Template JSON files use empty strings for images - upload via theme editor
+- **Font Handles**: Uses valid Shopify font handles (e.g., `assistant_n4`)
+- **Section Order**: All sections in templates must be listed in the `order` array
 
 ## 🛠️ Developer Tools
 
 ### Shopify CLI
 ```bash
-shopify theme dev          # Start development server
+shopify theme dev          # Start development server with hot reload
+shopify theme dev --theme-editor-sync  # Two-way sync with theme editor
 shopify theme push         # Push changes to store
 shopify theme pull         # Pull latest from store
 shopify theme check        # Run theme validation
@@ -107,6 +119,19 @@ shopify theme check        # Run theme validation
 ```bash
 npm run generate           # Generate 5 mystical art images
 ```
+
+### File Management
+- **`.shopifyignore`**: Excludes development files (node_modules, scripts, docs) from Shopify sync
+- **`.gitignore`**: Excludes sensitive and generated files from version control
+- Development files are automatically excluded when syncing to Shopify
+
+### Theme Editor Sync
+When using `--theme-editor-sync`, changes made in the Shopify theme editor will sync back to your local files. This enables two-way synchronization between your local development environment and the Shopify admin.
+
+### Image Assets
+- Images in `assets/` folder are automatically synced to Shopify
+- For template JSON files, set image fields to empty strings (`""`) - images should be uploaded via the theme editor
+- Generated mystical art images can be assigned in the theme editor after sync
 
 ## 📝 Based on Dawn
 

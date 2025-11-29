@@ -35,7 +35,7 @@
         "button"
       ],
       "settings": {
-        "image": "mystical-art-1.png",
+        "image": "",
         "image_overlay_opacity": 30,
         "image_height": "large",
         "desktop_content_position": "middle-center",
@@ -53,7 +53,7 @@
         "slide_1": {
           "type": "slide",
           "settings": {
-            "image": "mystical-art-2.png",
+            "image": "",
             "heading": "Divine Love",
             "heading_size": "h1",
             "subheading": "Experience the sacred connection",
@@ -69,7 +69,7 @@
         "slide_2": {
           "type": "slide",
           "settings": {
-            "image": "mystical-art-3.png",
+            "image": "",
             "heading": "Ethereal Beauty",
             "heading_size": "h1",
             "subheading": "Where mysticism meets artistry",
@@ -85,7 +85,7 @@
         "slide_3": {
           "type": "slide",
           "settings": {
-            "image": "mystical-art-4.png",
+            "image": "",
             "heading": "Sacred Geometry",
             "heading_size": "h1",
             "subheading": "Powerful symbols of transcendence",
@@ -207,7 +207,7 @@
       "type": "video",
       "settings": {
         "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_url": "",
         "heading_size": "h1",
         "description": "",
         "full_width": false,
@@ -276,6 +276,7 @@
     "rich_text",
     "featured_collection",
     "collage",
+    "video",
     "multicolumn"
   ]
 }
