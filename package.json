@@ -1,0 +1,14 @@
+{
+  "name": "spiritual-art-generator",
+  "version": "1.0.0",
+  "description": "Generate mystical art images for Spiritual Art store",
+  "type": "module",
+  "scripts": {
+    "generate": "node generate-images.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.30.0",
+    "@google/generative-ai": "^0.21.0",
+    "dotenv": "^16.4.5"
+  }
+}

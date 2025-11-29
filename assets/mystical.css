@@ -1,0 +1,121 @@
+/* Mystical Art Theme - Custom CSS */
+
+/* Import Google Font for Headings */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
+:root {
+  --font-heading-family: 'Cormorant Garamond', serif;
+  --font-body-family: 'Lato', sans-serif;
+  --color-gold: #D4AF37;
+  --color-deep-purple: #1A103C;
+  --color-soft-pink: #FFF0F5;
+}
+
+/* Global Typography Overrides */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--font-heading-family) !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+body {
+  font-family: var(--font-body-family) !important;
+}
+
+/* Smooth Scrolling & Animations */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fade In Animation for Sections */
+.shopify-section {
+  opacity: 0;
+  animation: fadeInSection 1.2s ease-out forwards;
+}
+
+@keyframes fadeInSection {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger animations for first few sections */
+.shopify-section:nth-child(1) { animation-delay: 0.1s; }
+.shopify-section:nth-child(2) { animation-delay: 0.3s; }
+.shopify-section:nth-child(3) { animation-delay: 0.5s; }
+
+/* Button Styling - Ethereal Glow */
+.button, .shopify-challenge__button, .customer button {
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: var(--font-heading-family);
+  font-weight: 700;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); /* Gold glow */
+}
+
+/* Card Enhancements */
+.card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(212, 175, 55, 0.1); /* Subtle gold border */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Magic */
+.media > img {
+  transition: transform 1.5s ease;
+}
+
+.card:hover .media > img {
+  transform: scale(1.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-deep-purple);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E5C158;
+}
+
+/* Decorative Section Dividers (Optional) */
+.shopify-section + .shopify-section {
+  position: relative;
+}
+
+/* Hero Section Text Enhancement */
+.banner__content {
+  background: rgba(26, 16, 60, 0.4); /* Semi-transparent purple overlay */
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.banner__heading {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+

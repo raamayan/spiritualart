@@ -1,17 +1,116 @@
-# Dawn
+# Spiritual Art - Mystical Shopify Theme
 
-[![Build status](https://github.com/shopify/dawn/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Shopify/dawn/actions/workflows/ci.yml?query=branch%3Amain)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?color=informational)](/.github/CONTRIBUTING.md)
+A stunning, ethereal Shopify theme customized for spiritual art, built on Dawn with mystical design elements, divine color palettes, and AI-generated artwork.
 
-[Getting started](#getting-started) |
-[Staying up to date with Dawn changes](#staying-up-to-date-with-dawn-changes) |
-[Developer tools](#developer-tools) |
-[Contributing](#contributing) |
-[Code of conduct](#code-of-conduct) |
-[Theme Store submission](#theme-store-submission) |
-[License](#license)
+## ✨ Features
 
-Dawn represents a HTML-first, JavaScript-only-as-needed approach to theme development. It's Shopify's first source available theme with performance, flexibility, and [Online Store 2.0 features](https://www.shopify.com/partners/blog/shopify-online-store) built-in and acts as a reference for building Shopify themes.
+### Mystical Design System
+- **Divine Color Palette**: Warm creams, deep cosmic purples, and metallic gold accents
+- **Ethereal Typography**: Elegant serif fonts (Cormorant Garamond) for headings, clean sans-serif for body text
+- **Smooth Animations**: Fade-in effects, hover glows, and gentle transitions
+- **Gallery-Focused Layout**: Wide 1600px page width with generous spacing for art showcase
+- **Custom Scrollbar**: Gold and purple themed scrollbar matching the mystical aesthetic
+
+### AI Image Generation
+- **Automated Art Creation**: Generate mystical spiritual art using Google's Gemini 2.5 Flash Image model
+- **5 Pre-configured Prompts**: Ready-to-use prompts for Radha-Krishna art, cosmic meditations, lotus landscapes, mandalas, and divine figures
+- **Easy Integration**: Generated images automatically saved to `assets/` folder
+
+### Enhanced User Experience
+- **Parallax Hero Sections**: Immersive full-width banners with mystical artwork
+- **Slideshow Gallery**: Auto-rotating slideshow showcasing multiple art pieces
+- **Smooth Scrolling**: Enhanced navigation with elegant transitions
+- **Responsive Design**: Mobile-first approach with mystical styling across all devices
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js v24+ installed
+- Shopify CLI installed (`npm install -g @shopify/cli`)
+- Google API key for image generation (optional)
+
+### Setup
+
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+
+2. **Configure Environment**
+   Create a `.env` file:
+   ```
+   SHOPIFY_FLAG_STORE=your-store.myshopify.com
+   GOOGLE_API_KEY=your-api-key-here
+   ```
+
+3. **Generate Mystical Art Images** (Optional)
+   ```bash
+   npm run generate
+   ```
+   This will create 5 mystical art images in the `assets/` folder using AI.
+
+4. **Start Development Server**
+   ```bash
+   shopify theme dev --store=your-store.myshopify.com
+   ```
+
+## 🎨 Customization
+
+### Color Schemes
+The theme includes 5 mystical color schemes:
+- **Scheme 1**: Light ethereal (warm cream background, gold accents)
+- **Scheme 2**: Dark mystical (deep purple cosmic background)
+- **Scheme 3**: Indigo power (deep indigo with gold)
+- **Scheme 4**: Charcoal elegance (dark with light text)
+- **Scheme 5**: Rose gold (soft pink with gold)
+
+### Typography
+- **Headings**: Cormorant Garamond (serif, elegant)
+- **Body**: Lato (clean, readable)
+
+### Custom CSS
+Additional mystical styling is in `assets/mystical.css`:
+- Fade-in animations
+- Hover effects with gold glows
+- Custom scrollbar
+- Image zoom effects
+
+## 📁 Project Structure
+
+```
+spiritualart/
+├── assets/
+│   ├── mystical.css          # Custom mystical styling
+│   └── mystical-art-*.png    # AI-generated art images
+├── config/
+│   └── settings_data.json    # Theme settings with mystical colors
+├── layout/
+│   └── theme.liquid          # Main theme layout
+├── sections/                 # Shopify sections
+├── templates/
+│   └── index.json           # Homepage with hero & slideshow
+├── generate-images.js        # AI image generation script
+└── package.json             # Dependencies
+```
+
+## 🛠️ Developer Tools
+
+### Shopify CLI
+```bash
+shopify theme dev          # Start development server
+shopify theme push         # Push changes to store
+shopify theme pull         # Pull latest from store
+shopify theme check        # Run theme validation
+```
+
+### Image Generation
+```bash
+npm run generate           # Generate 5 mystical art images
+```
+
+## 📝 Based on Dawn
+
+This theme is built on [Dawn](https://github.com/Shopify/dawn), Shopify's reference theme, with extensive customization for spiritual art.
 
 * **Web-native in its purest form:** Themes run on the [evergreen web](https://www.w3.org/2001/tag/doc/evergreen-web/). We leverage the latest web browsers to their fullest, while maintaining support for the older ones through progressive enhancement—not polyfills.
 * **Lean, fast, and reliable:** Functionality and design defaults to “no” until it meets this requirement. Code ships on quality. Themes must be built with purpose. They shouldn’t support each and every feature in Shopify.

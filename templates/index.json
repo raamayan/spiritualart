@@ -6,23 +6,23 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
+            "heading": "Spiritual Art",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "text": "Discover divine beauty through mystical art that transcends the ordinary",
+            "text_style": "subtitle"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "Explore Collection",
             "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
+            "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
@@ -35,15 +35,86 @@
         "button"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
+        "image": "mystical-art-1.png",
+        "image_overlay_opacity": 30,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
         "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-1",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
+      }
+    },
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_1": {
+          "type": "slide",
+          "settings": {
+            "image": "mystical-art-2.png",
+            "heading": "Divine Love",
+            "heading_size": "h1",
+            "subheading": "Experience the sacred connection",
+            "button_label_1": "View Art",
+            "button_link_1": "shopify://collections/all",
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 20,
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_2": {
+          "type": "slide",
+          "settings": {
+            "image": "mystical-art-3.png",
+            "heading": "Ethereal Beauty",
+            "heading_size": "h1",
+            "subheading": "Where mysticism meets artistry",
+            "button_label_1": "Explore",
+            "button_link_1": "shopify://collections/all",
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 20,
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_3": {
+          "type": "slide",
+          "settings": {
+            "image": "mystical-art-4.png",
+            "heading": "Sacred Geometry",
+            "heading_size": "h1",
+            "subheading": "Powerful symbols of transcendence",
+            "button_label_1": "Discover",
+            "button_link_1": "shopify://collections/all",
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 20,
+            "color_scheme": "scheme-1"
+          }
+        }
+      },
+      "block_order": [
+        "slide_1",
+        "slide_2",
+        "slide_3"
+      ],
+      "settings": {
+        "layout": "full_width",
+        "slide_height": "adapt",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "ambient",
+        "show_text_below": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "rich_text": {
@@ -52,14 +123,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
+            "heading": "Welcome to Spiritual Art",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "<p>Immerse yourself in a world where divine beauty meets artistic mastery. Each piece in our collection is crafted to inspire, transform, and connect you with the mystical essence of spiritual art.<\/p>"
           }
         }
       },
@@ -70,8 +141,8 @@
       "settings": {
         "color_scheme": "scheme-1",
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "padding_top": 60,
+        "padding_bottom": 40
       }
     },
     "featured_collection": {
@@ -201,10 +272,10 @@
   },
   "order": [
     "image_banner",
+    "slideshow",
     "rich_text",
     "featured_collection",
     "collage",
-    "video",
     "multicolumn"
   ]
 }
