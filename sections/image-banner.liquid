@@ -27,6 +27,17 @@
   #Banner-{{ section.id }}::after {
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
+  {%- if section.settings.image_overlay_opacity == 0 -%}
+    #Banner-{{ section.id }}::after {
+      display: none;
+    }
+  {%- endif -%}
+  /* Ensure image quality */
+  #Banner-{{ section.id }} .banner__media img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: high-quality;
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -72,14 +83,15 @@
       -%}
       {{
         section.settings.image
-        | image_url: width: 3840
+        | image_url: width: 3840, format: 'pjpg'
         | image_tag:
           width: section.settings.image.width,
           height: image_height,
           class: image_class,
           sizes: sizes,
           widths: widths,
-          fetchpriority: fetch_priority
+          fetchpriority: fetch_priority,
+          loading: 'eager'
       }}
     </div>
   {%- elsif section.settings.image_2 == blank -%}
@@ -104,14 +116,15 @@
       -%}
       {{
         section.settings.image_2
-        | image_url: width: 3840
+        | image_url: width: 3840, format: 'pjpg'
         | image_tag:
           width: section.settings.image_2.width,
           height: image_height_2,
           class: image_class_2,
           sizes: sizes,
           widths: widths,
-          fetchpriority: fetch_priority
+          fetchpriority: fetch_priority,
+          loading: 'eager'
       }}
     </div>
   {%- endif -%}
