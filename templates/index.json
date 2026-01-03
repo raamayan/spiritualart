@@ -20,7 +20,7 @@
             "content_alignment": "center",
             "text_alignment": "center",
             "background_image": "shopify://shop_images/03-slideshow-slide-ethereal-beauty.png",
-            "image_opacity": 60,
+            "image_opacity": 25,
             "background_color": "#1A103C",
             "overlay_color": "#000000",
             "overlay_opacity": 40,
