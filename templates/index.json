@@ -9,52 +9,53 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "1767479421b2bb69c1": {
+      "type": "_blocks",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "ai_gen_block_47a726b_yncJmt": {
+          "type": "ai_gen_block_47a726b",
           "settings": {
-            "heading": "Spiritual Art",
-            "heading_size": "h0"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Discover divine beauty through mystical art that transcends the ordinary",
-            "text_style": "subtitle"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Explore Collection",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
+            "section_height": 700,
+            "content_max_width": 1000,
+            "content_alignment": "center",
+            "text_alignment": "center",
+            "image_opacity": 60,
+            "background_color": "#1A103C",
+            "overlay_color": "#000000",
+            "overlay_opacity": 40,
+            "show_lotus": true,
+            "lotus_size": 80,
+            "lotus_color": "#D4AF37",
+            "show_pattern": true,
+            "mandala_size": 500,
+            "mandala_color": "#D4AF37",
+            "pattern_opacity": 20,
+            "subtitle": "Sacred Art Collection",
+            "subtitle_size": 14,
+            "show_divider": true,
+            "title": "Awaken Devotion And Spiritual Growth Through Art",
+            "title_size": 56,
+            "description": "<p>Explore our curated collection of devotional artwork designed to inspire tranquility and spiritual connection in your sacred space.</p>",
+            "description_size": 18,
+            "text_color": "#FAF9F6",
+            "button_text": "Explore Collection",
+            "button_link": "",
+            "button_text_size": 14,
+            "button_background": "#D4AF37",
+            "button_text_color": "#1A103C",
+            "button_border_color": "#D4AF37",
+            "button_hover_background": "#FFD700",
+            "button_hover_text_color": "#1A103C",
+            "button_hover_border_color": "#FFD700",
+            "button_radius": 8
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "ai_gen_block_47a726b_yncJmt"
       ],
-      "settings": {
-        "image": "",
-        "image_overlay_opacity": 30,
-        "image_height": "large",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": true,
-        "color_scheme": "scheme-1",
-        "stack_images_on_mobile": false,
-        "mobile_content_alignment": "center",
-        "show_text_below": false
-      }
+      "settings": {}
     },
     "slideshow": {
       "type": "slideshow",
@@ -62,42 +63,90 @@
         "slide_1": {
           "type": "slide",
           "settings": {
-            "image": "",
+            "image": "shopify://shop_images/02-slideshow-slide-divine-love.png",
             "image_overlay_opacity": 20,
-            "heading": "Divine Love",
+            "heading": "Vedic Hindu Art",
             "heading_size": "h1",
-            "subheading": "Experience the sacred connection",
+            "subheading": "The Vedas Come Alive For Your Altar",
+            "button_label": "Explore",
+            "link": "",
+            "button_style_secondary": false,
             "show_text_box": true,
             "box_align": "middle-center",
             "text_alignment": "center",
+            "text_alignment_mobile": "center",
             "color_scheme": "scheme-1"
           }
         },
         "slide_2": {
           "type": "slide",
           "settings": {
-            "image": "",
+            "image": "shopify://shop_images/05-banner-collection-page.png",
             "image_overlay_opacity": 20,
-            "heading": "Ethereal Beauty",
+            "heading": "Christian Art",
             "heading_size": "h1",
-            "subheading": "Where mysticism meets artistry",
+            "subheading": "Where Christianity Comes Alive In Your Space",
+            "button_label": "Explore",
+            "link": "",
+            "button_style_secondary": false,
             "show_text_box": true,
             "box_align": "middle-center",
             "text_alignment": "center",
+            "text_alignment_mobile": "center",
             "color_scheme": "scheme-1"
           }
         },
-        "slide_3": {
+        "slide_VMGAea": {
           "type": "slide",
           "settings": {
-            "image": "",
-            "image_overlay_opacity": 20,
-            "heading": "Sacred Geometry",
+            "image": "shopify://shop_images/08-banner-background-section-2.png",
+            "image_overlay_opacity": 0,
+            "heading": "Spiritual Art",
             "heading_size": "h1",
-            "subheading": "Powerful symbols of transcendence",
+            "subheading": "From Sacred Geometry To Spiritual Awakening Codes",
+            "button_label": "Explore",
+            "link": "",
+            "button_style_secondary": false,
             "show_text_box": true,
             "box_align": "middle-center",
             "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_gFtCa3": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/04-slideshow-slide-sacred-geometry.png",
+            "image_overlay_opacity": 0,
+            "heading": "Kaballah Judaic Mysticism",
+            "heading_size": "h1",
+            "subheading": "Bring The Wisdom Of The Ancients Alive",
+            "button_label": "Explore",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_rMmewV": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/07-banner-background-section-1.png",
+            "image_overlay_opacity": 0,
+            "heading": "Buddhist Art",
+            "heading_size": "h1",
+            "subheading": "Awaken The Silence Through Art",
+            "button_label": "Explore",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
             "color_scheme": "scheme-1"
           }
         }
@@ -105,7 +154,9 @@
       "block_order": [
         "slide_1",
         "slide_2",
-        "slide_3"
+        "slide_VMGAea",
+        "slide_gFtCa3",
+        "slide_rMmewV"
       ],
       "settings": {
         "layout": "full_width",
@@ -114,7 +165,21 @@
         "auto_rotate": true,
         "change_slides_speed": 5,
         "image_behavior": "ambient",
-        "show_text_below": false
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "slideshow_ciNfRN": {
+      "type": "slideshow",
+      "settings": {
+        "layout": "full_width",
+        "slide_height": "adapt",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "ambient",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
       }
     },
     "rich_text": {
@@ -130,7 +195,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>At Spiritual Art, we curate transcendent artworks that bridge the ancient and the contemporary. Each piece is a portal to deeper consciousness, blending sacred symbolism with contemporary aesthetics. Our collection features divine figures, cosmic landscapes, mandalas, and spiritual iconography designed to elevate your space and awaken your inner wisdom.</p>"
+            "text": "<p>At Devotia, we curate transcendent artworks that bridge the ancient and the contemporary. Each piece is a portal to deeper consciousness, blending sacred symbolism with contemporary aesthetics. Our collection features divine figures, cosmic landscapes, mandalas, and spiritual iconography designed to elevate your space and awaken your inner wisdom.</p>"
           }
         }
       },
@@ -139,6 +204,8 @@
         "text"
       ],
       "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
         "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 60,
@@ -152,13 +219,21 @@
         "products_to_show": 8,
         "title": "Sacred Art Collection",
         "heading_size": "h2",
-        "columns_desktop": 4,
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 2,
+        "enable_desktop_slider": false,
+        "full_width": false,
         "show_view_all": false,
+        "view_all_style": "solid",
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
+        "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
+        "quick_add": "none",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 28,
@@ -220,8 +295,9 @@
     }
   },
   "order": [
-    "image_banner",
+    "1767479421b2bb69c1",
     "slideshow",
+    "slideshow_ciNfRN",
     "rich_text",
     "featured_collection",
     "multicolumn"
