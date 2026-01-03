@@ -32,7 +32,7 @@
           "type": "text",
           "settings": {
             "heading": "Our Mission",
-            "subtext": "<p>Spiritual Art is dedicated to bringing sacred beauty into modern spaces. We believe art has the power to transform consciousness, elevate energy, and create sanctuaries of peace in your daily life. Each piece in our collection is thoughtfully curated to inspire your spiritual journey.<\/p>"
+            "subtext": "<p>Spiritual Art is dedicated to bringing sacred beauty into modern spaces. </p>"
           }
         }
       },
@@ -45,6 +45,7 @@
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
         "newsletter_heading": "Join Our Sacred Circle",
+        "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false,

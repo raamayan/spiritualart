@@ -19,6 +19,7 @@
             "content_max_width": 1000,
             "content_alignment": "center",
             "text_alignment": "center",
+            "background_image": "shopify://shop_images/03-slideshow-slide-ethereal-beauty.png",
             "image_opacity": 60,
             "background_color": "#1A103C",
             "overlay_color": "#000000",
@@ -182,36 +183,6 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Sacred Art for the Modern Soul",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>At Devotia, we curate transcendent artworks that bridge the ancient and the contemporary. Each piece is a portal to deeper consciousness, blending sacred symbolism with contemporary aesthetics. Our collection features divine figures, cosmic landscapes, mandalas, and spiritual iconography designed to elevate your space and awaken your inner wisdom.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 60,
-        "padding_bottom": 40
-      }
-    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -277,7 +248,7 @@
         "column3"
       ],
       "settings": {
-        "title": "Why Choose Spiritual Art",
+        "title": "",
         "heading_size": "h2",
         "image_width": "third",
         "image_ratio": "adapt",
@@ -292,14 +263,44 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "rich_text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Devotia",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At Devotia, we curate transcendent artworks that bridge the ancient and the contemporary. Each piece is a portal to deeper consciousness, blending sacred symbolism with contemporary aesthetics. Our collection features divine figures, cosmic landscapes, mandalas, and spiritual iconography designed to elevate your space and awaken your inner wisdom.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
     "1767479421b2bb69c1",
     "slideshow",
     "slideshow_ciNfRN",
-    "rich_text",
     "featured_collection",
-    "multicolumn"
+    "multicolumn",
+    "rich_text"
   ]
 }
