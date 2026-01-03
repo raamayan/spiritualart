@@ -1,6 +1,644 @@
+{% doc %}
+  @prompt
+    Create a beautiful devotional art store theme with a serene, sacred atmosphere. Include calming colors like deep purples, golds, and earth tones. Add elegant typography with a peaceful, meditative feel. Incorporate subtle spiritual patterns like mandalas or lotus motifs. The design should feel reverent, calming, and showcase devotional artwork beautifully with clean, spacious layouts.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-devotional-hero-{{ ai_gen_id }} {
+    display: block;
+    position: relative;
+    width: 100%;
+    min-height: {{ block.settings.section_height }}px;
+    overflow: hidden;
+    background: {{ block.settings.background_color }};
+  }
+
+  .ai-devotional-hero__background-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .ai-devotional-hero__background-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: {{ block.settings.image_opacity | divided_by: 100.0 }};
+  }
+
+  .ai-devotional-hero__background-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1A103C 0%, #2D1B5E 50%, #4B0082 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-devotional-hero__background-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+  }
+
+  .ai-devotional-hero__overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: {{ block.settings.overlay_color }};
+    opacity: {{ block.settings.overlay_opacity | divided_by: 100.0 }};
+    z-index: 2;
+  }
+
+  .ai-devotional-hero__pattern-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    opacity: {{ block.settings.pattern_opacity | divided_by: 100.0 }};
+    pointer-events: none;
+  }
+
+  .ai-devotional-hero__mandala-{{ ai_gen_id }} {
+    position: absolute;
+    width: {{ block.settings.mandala_size }}px;
+    height: {{ block.settings.mandala_size }}px;
+    stroke: {{ block.settings.mandala_color }};
+    fill: none;
+    stroke-width: 1;
+    opacity: 0.3;
+  }
+
+  .ai-devotional-hero__mandala-{{ ai_gen_id }}--top-left {
+    top: -{{ block.settings.mandala_size | divided_by: 3 }}px;
+    left: -{{ block.settings.mandala_size | divided_by: 3 }}px;
+  }
+
+  .ai-devotional-hero__mandala-{{ ai_gen_id }}--bottom-right {
+    bottom: -{{ block.settings.mandala_size | divided_by: 3 }}px;
+    right: -{{ block.settings.mandala_size | divided_by: 3 }}px;
+  }
+
+  .ai-devotional-hero__content-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: {{ block.settings.content_alignment }};
+    justify-content: center;
+    min-height: {{ block.settings.section_height }}px;
+    padding: 60px 40px;
+    max-width: {{ block.settings.content_max_width }}px;
+    margin: 0 auto;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-devotional-hero__lotus-{{ ai_gen_id }} {
+    width: {{ block.settings.lotus_size }}px;
+    height: {{ block.settings.lotus_size }}px;
+    margin-bottom: 24px;
+    fill: {{ block.settings.lotus_color }};
+    opacity: 0.9;
+  }
+
+  .ai-devotional-hero__subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 16px 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 300;
+    opacity: 0.9;
+  }
+
+  .ai-devotional-hero__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 24px 0;
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+
+  .ai-devotional-hero__description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 32px 0;
+    line-height: 1.8;
+    opacity: 0.95;
+    max-width: 600px;
+  }
+
+  .ai-devotional-hero__button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 40px;
+    background-color: {{ block.settings.button_background }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.button_radius }}px;
+    font-size: {{ block.settings.button_text_size }}px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid {{ block.settings.button_border_color }};
+    font-weight: 500;
+  }
+
+  .ai-devotional-hero__button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background }};
+    color: {{ block.settings.button_hover_text_color }};
+    border-color: {{ block.settings.button_hover_border_color }};
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+  }
+
+  .ai-devotional-hero__divider-{{ ai_gen_id }} {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, {{ block.settings.text_color }}, transparent);
+    margin: 20px 0;
+    opacity: 0.5;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-devotional-hero-{{ ai_gen_id }} {
+      min-height: {{ block.settings.section_height | times: 0.7 }}px;
+    }
+
+    .ai-devotional-hero__content-{{ ai_gen_id }} {
+      min-height: {{ block.settings.section_height | times: 0.7 }}px;
+      padding: 40px 20px;
+    }
+
+    .ai-devotional-hero__title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.6 }}px;
+    }
+
+    .ai-devotional-hero__subtitle-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subtitle_size | times: 0.8 }}px;
+    }
+
+    .ai-devotional-hero__description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.description_size | times: 0.9 }}px;
+    }
+
+    .ai-devotional-hero__lotus-{{ ai_gen_id }} {
+      width: {{ block.settings.lotus_size | times: 0.7 }}px;
+      height: {{ block.settings.lotus_size | times: 0.7 }}px;
+    }
+
+    .ai-devotional-hero__mandala-{{ ai_gen_id }} {
+      width: {{ block.settings.mandala_size | times: 0.6 }}px;
+      height: {{ block.settings.mandala_size | times: 0.6 }}px;
+    }
+  }
+{% endstyle %}
+
+<devotional-hero-{{ ai_gen_id }} class="ai-devotional-hero-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-devotional-hero__background-{{ ai_gen_id }}">
+    {% if block.settings.background_image %}
+      <img
+        src="{{ block.settings.background_image | image_url: width: 2000 }}"
+        alt="{{ block.settings.background_image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.background_image.width }}"
+        height="{{ block.settings.background_image.height }}"
+      >
+    {% else %}
+      <div class="ai-devotional-hero__background-placeholder-{{ ai_gen_id }}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="ai-devotional-hero__overlay-{{ ai_gen_id }}"></div>
+
+  {% if block.settings.show_pattern %}
+    <div class="ai-devotional-hero__pattern-{{ ai_gen_id }}">
+      <svg class="ai-devotional-hero__mandala-{{ ai_gen_id }} ai-devotional-hero__mandala-{{ ai_gen_id }}--top-left" viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="90" />
+        <circle cx="100" cy="100" r="70" />
+        <circle cx="100" cy="100" r="50" />
+        <circle cx="100" cy="100" r="30" />
+        {% for i in (0..11) %}
+          {% assign angle = i | times: 30 %}
+          <line x1="100" y1="100" x2="190" y2="100" transform="rotate({{ angle }} 100 100)" />
+        {% endfor %}
+        {% for i in (0..7) %}
+          {% assign angle = i | times: 45 %}
+          <circle cx="100" cy="30" r="8" transform="rotate({{ angle }} 100 100)" />
+          <circle cx="100" cy="50" r="6" transform="rotate({{ angle }} 100 100)" />
+          <circle cx="100" cy="70" r="4" transform="rotate({{ angle }} 100 100)" />
+        {% endfor %}
+      </svg>
+
+      <svg class="ai-devotional-hero__mandala-{{ ai_gen_id }} ai-devotional-hero__mandala-{{ ai_gen_id }}--bottom-right" viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="90" />
+        <circle cx="100" cy="100" r="70" />
+        <circle cx="100" cy="100" r="50" />
+        <circle cx="100" cy="100" r="30" />
+        {% for i in (0..11) %}
+          {% assign angle = i | times: 30 %}
+          <line x1="100" y1="100" x2="190" y2="100" transform="rotate({{ angle }} 100 100)" />
+        {% endfor %}
+        {% for i in (0..7) %}
+          {% assign angle = i | times: 45 %}
+          <circle cx="100" cy="30" r="8" transform="rotate({{ angle }} 100 100)" />
+          <circle cx="100" cy="50" r="6" transform="rotate({{ angle }} 100 100)" />
+          <circle cx="100" cy="70" r="4" transform="rotate({{ angle }} 100 100)" />
+        {% endfor %}
+      </svg>
+    </div>
+  {% endif %}
+
+  <div class="ai-devotional-hero__content-{{ ai_gen_id }}">
+    {% if block.settings.show_lotus %}
+      <svg class="ai-devotional-hero__lotus-{{ ai_gen_id }}" viewBox="0 0 100 100">
+        <path d="M50,90 Q30,70 30,50 Q30,30 50,10 Q70,30 70,50 Q70,70 50,90 Z" />
+        <path d="M50,10 Q35,25 35,40 Q35,55 50,70 Q65,55 65,40 Q65,25 50,10 Z" />
+        <ellipse cx="50" cy="50" rx="8" ry="12" />
+        <path d="M20,60 Q30,50 40,55" />
+        <path d="M80,60 Q70,50 60,55" />
+        <path d="M35,75 Q40,65 45,70" />
+        <path d="M65,75 Q60,65 55,70" />
+      </svg>
+    {% endif %}
+
+    {% if block.settings.subtitle != blank %}
+      <div class="ai-devotional-hero__subtitle-{{ ai_gen_id }}">
+        {{ block.settings.subtitle }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.show_divider %}
+      <div class="ai-devotional-hero__divider-{{ ai_gen_id }}"></div>
+    {% endif %}
+
+    {% if block.settings.title != blank %}
+      <h1 class="ai-devotional-hero__title-{{ ai_gen_id }}">
+        {{ block.settings.title }}
+      </h1>
+    {% endif %}
+
+    {% if block.settings.description != blank %}
+      <div class="ai-devotional-hero__description-{{ ai_gen_id }}">
+        {{ block.settings.description }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.button_text != blank %}
+      <a href="{{ block.settings.button_link }}" class="ai-devotional-hero__button-{{ ai_gen_id }}">
+        {{ block.settings.button_text }}
+      </a>
+    {% endif %}
+  </div>
+</devotional-hero-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class DevotionalHero{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.setupAccessibility();
+      }
+
+      setupAccessibility() {
+        const heading = this.querySelector('.ai-devotional-hero__title-{{ ai_gen_id }}');
+        if (heading) {
+          heading.setAttribute('tabindex', '0');
+        }
+      }
+    }
+
+    customElements.define('devotional-hero-{{ ai_gen_id }}', DevotionalHero{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Devotional art hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "section_height",
+      "min": 400,
+      "max": 900,
+      "step": 50,
+      "unit": "px",
+      "label": "Section height",
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "min": 600,
+      "max": 1400,
+      "step": 100,
+      "unit": "px",
+      "label": "Content max width",
+      "default": 1000
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "range",
+      "id": "image_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Image opacity",
+      "default": 60
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#1A103C"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Lotus symbol"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_lotus",
+      "label": "Show lotus symbol",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "lotus_size",
+      "min": 40,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Lotus size",
+      "default": 80
+    },
+    {
+      "type": "color",
+      "id": "lotus_color",
+      "label": "Lotus color",
+      "default": "#D4AF37"
+    },
+    {
+      "type": "header",
+      "content": "Mandala pattern"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pattern",
+      "label": "Show mandala pattern",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "mandala_size",
+      "min": 300,
+      "max": 700,
+      "step": 50,
+      "unit": "px",
+      "label": "Mandala size",
+      "default": 500
+    },
+    {
+      "type": "color",
+      "id": "mandala_color",
+      "label": "Mandala color",
+      "default": "#D4AF37"
+    },
+    {
+      "type": "range",
+      "id": "pattern_opacity",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "%",
+      "label": "Pattern opacity",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Sacred Art Collection"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 14
+    },
+    {
+      "type": "checkbox",
+      "id": "show_divider",
+      "label": "Show divider",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "Discover Inner Peace Through Art"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 56
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Explore our curated collection of devotional artwork designed to inspire tranquility and spiritual connection in your sacred space.</p>"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#FAF9F6"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Explore Collection"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button text size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button background",
+      "default": "#D4AF37"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#1A103C"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button border color",
+      "default": "#D4AF37"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background",
+      "label": "Hover background",
+      "default": "#FFD700"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text color",
+      "default": "#1A103C"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_border_color",
+      "label": "Hover border color",
+      "default": "#FFD700"
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Button border radius",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Devotional art hero"
+    }
+  ]
+}
 {% endschema %}
